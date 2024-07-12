@@ -15,7 +15,3 @@ Finally:
 # replace griffith with `deno run -A main.ts` if running from source
 griffith myzonefile.txt
 ```
-
-## TODO (contributors wanted!)
-
-- Binary distribution
