@@ -5,12 +5,15 @@ provided zonefile. Please note that this tool can't handle wildcard records.
 
 ## Usage
 
-First, download your domain's zonefile from your DNS provider.
+First, obtain the tool, you can either clone this repository or [grab a compiled version](https://nightly.link/FyraLabs/griffith/workflows/deno/main?preview).
 
-Then simply:
+Then, download your domain's zonefile from your DNS provider.
+
+Finally:
 
 ```bash
-deno run -A main.ts myzonefile.txt
+# replace griffith with `deno run -A main.ts` if running from source
+griffith myzonefile.txt
 ```
 
 ## TODO (contributors wanted!)
