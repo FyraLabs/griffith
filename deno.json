@@ -1,0 +1,6 @@
+{
+  "imports": {
+    "@std/async": "jsr:@std/async@^0.224.2",
+    "dnsz": "npm:dnsz@^4.1.2"
+  }
+}
