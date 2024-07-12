@@ -5,7 +5,8 @@ provided zonefile. Please note that this tool can't handle wildcard records.
 
 ## Usage
 
-First, obtain the tool, you can either clone this repository or [grab a compiled version](https://nightly.link/FyraLabs/griffith/workflows/deno/main?preview).
+First, obtain the tool, you can either clone this repository or
+[grab a compiled version](https://nightly.link/FyraLabs/griffith/workflows/deno/main?preview).
 
 Then, download your domain's zonefile from your DNS provider.
 
