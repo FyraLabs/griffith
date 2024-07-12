@@ -9,7 +9,7 @@ import { gradeColors, validRecordTypes } from "./consts.ts";
 const { args } = await new Command()
   .name("griffith")
   .version("0.1.0")
-  .description("A bulk interface for the MDN Web Observatory.")
+  .description("A bulk interface to the MDN Web Observatory.")
   .arguments("<zonefile:file>")
   .parse(Deno.args);
 
