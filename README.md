@@ -1,7 +1,7 @@
 # griffith
 
-A Deno CLI tool providing a bulk interface to the MDN Web Observatory, using a provided zonefile.
-Please note that this tool can't handle wildcard records.
+A Deno CLI tool providing a bulk interface to the MDN Web Observatory, using a
+provided zonefile. Please note that this tool can't handle wildcard records.
 
 ## Usage
 

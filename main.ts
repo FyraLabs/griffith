@@ -17,7 +17,7 @@ const zone = parseZone(await Deno.readTextFile(args[0]));
 const hostnames = zone.records
   .filter(
     (r) =>
-      r.class == "IN" && validRecordTypes.has(r.type) && !r.name.includes("*")
+      r.class == "IN" && validRecordTypes.has(r.type) && !r.name.includes("*"),
   )
   .map((r) => r.name);
 
@@ -25,15 +25,15 @@ const responses: [string, AnalyzeResponse][] = await Array.fromAsync(
   pooledMap(
     5, // Only send 5 requests at a time
     hostnames,
-    async (host) => [host, await analyze(host)]
-  )
+    async (host) => [host, await analyze(host)],
+  ),
 );
 
 const results: [string, Analysis][] = responses.filter(
-  (r): r is [string, Analysis] => "scan" in r[1]
+  (r): r is [string, Analysis] => "scan" in r[1],
 );
 const errors: [string, AnalysisError][] = responses.filter(
-  (r): r is [string, AnalysisError] => !("scan" in r[1])
+  (r): r is [string, AnalysisError] => !("scan" in r[1]),
 );
 
 new Table()
@@ -42,17 +42,15 @@ new Table()
     results.map(([host, analysis]) => [
       host,
       `${analysis.scan.tests_passed}/${analysis.scan.tests_quantity}`,
-      analysis.scan.tests_failed === 0
-        ? "None"
-        : Object.values(analysis.tests)
-            .filter((t) => t.pass === false)
-            .map((t) => t.title)
-            .join(", "),
+      analysis.scan.tests_failed === 0 ? "None" : Object.values(analysis.tests)
+        .filter((t) => t.pass === false)
+        .map((t) => t.title)
+        .join(", "),
       analysis.scan.score!,
       gradeColors[analysis.scan.grade! as keyof typeof gradeColors](
-        analysis.scan.grade!
+        analysis.scan.grade!,
       ),
-    ])
+    ]),
   )
   .padding(1)
   .border()
